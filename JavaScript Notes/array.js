@@ -1,4 +1,3 @@
-'use strict'
 function Submit() {
     
     let strArray = ["C#", "Java", "GoLang", "Rust", "Python", "JavaScript"];

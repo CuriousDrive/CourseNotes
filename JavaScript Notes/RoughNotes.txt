@@ -1,0 +1,59 @@
+document.getElementById("demo").innerHTML 
+JavaScript accepts both double and single quotes:
+It looks like if you start with double quotes then you will have to use single quotes inside
+
+***** Change the attributes like src of an image *****
+document.getElementById('myImage').src='pic_bulbon.gif'
+where myImage is an image on the page
+
+***** Change the html style of your HTML elements *****
+document.getElementById('demo').style.fontSize = '35px'
+I had to add something in the demo para 
+
+***** Hide/Show HTML elements *****
+<button onclick="document.getElementById('demo').style.display = 'none'">Hide</button>
+<button onclick="document.getElementById('demo').style.display = 'block'">Show</button>
+<p id="demo">I am going to change the font of this paragraph</p>
+
+***** The <script> Tag *****
+<script>
+    function myFunction() {
+        document.getElementById('demo').innerHTML = 'This is new text';
+    }
+You can put your script anywhere in the html document
+But the performance your page is improved if you keep the script tag below body element
+You don't need to set the type of the script tag anymore it is set to "text/javascript" by default
+
+***** External JS file *****
+You can put your JS code in an external file
+And then use src attribute to refer to that file
+Placing scripts in external files has some advantages:
+    It separates HTML and code
+    It makes HTML and JavaScript easier to read and maintain
+    Cached JavaScript files can speed up page loads
+
+***** Different ways to show your results ***** [this even could be one the first]
+*** document.element.innerHTML
+    document.getElementById('demo').innerHTML = 5 + 7;
+
+*** document.write()
+    this function is cool and uncool
+    it replaces the html document by whatever is getting passed in the function
+    You can add html elements as text and can create new list of html controls
+    I can see why this is not used as much and why I did not know about it
+    Using document.write() after an HTML document is loaded, will delete all existing HTML:
+
+*** window.alert()
+    this show an alert pop with the message that you are trying to pass
+    You can skip the window keyword.
+    the window object is the global scope object, 
+    that means that variables, properties, and methods by default belong to the window object
+    It means window has document and console as properties
+
+*** console.log()
+    this is also part of window the global object
+    which logs your information in the console
+    You can open console by pressing F12 or from Settings => More Tools => Developer tools
+
+*** window.print()
+    this literally prints the document. You can also save it as PDF 

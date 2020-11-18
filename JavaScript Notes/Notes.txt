@@ -1,0 +1,573 @@
+--------------------------  JavaScript Beginners Course --------------------------
+
+Rough Scope 
+
+=> Introduction, Scope and Sample app?
+=> Setting up the Enrionment
+=> Buttons and paragraphs
+=> Script tag
+=> Different ways to show the effects/results
+=> Statements
+=> Comments
+=> Assignment Operator
+=> Variables & Identifiers
+=> Arithmatic Operators
+
+-------------------------------- SETUP THE ENVIORMENT --------------------------------
+
+Add paragraph
+<p id="demo">I am going to change the font of this paragraph</p>
+
+***** The <script> Tag *****
+<script>    
+        document.getElementById('demo').innerHTML = 'This is new text';
+</script>    
+
+You can put your script anywhere in the html document
+But the performance your page is improved if you keep the script tag below body element
+You don't need to set the type of the script tag anymore it is set to "text/javascript" by default
+
+***** Different ways to show your results ***** [this even could be one the first]
+
+*** document.element.innerHTML
+    document.getElementById('demo').innerHTML = 5 + 7;
+
+*** console.log()
+    this is also part of window the global object
+    which logs your information in the console
+    You can open console by pressing F12 or from Settings => More Tools => Developer tools 
+
+-------------------------------- SETUP THE ENVIORMENT ---------------------
+
+
+-------------------------------- BEGINNERS --------------------------------
+
+this is where W3 is lagging they don't have the sequence right. We need to work on it
+
+***** JS Statements ***** https://www.w3schools.com/js/js_statements.asp
+    the instructions are called as statements
+    Values, Operators, Expressions, Keywords, and Comments.
+    Semicolons separate JavaScript statements.
+    I don't think this a good example as far as getting started with statements
+    because no on knows what VAR is 
+    A JavaScript program is a list of programming statements.
+        var x,y,z;
+        x = 5;
+        y = 6;
+        z = x + y;
+        console.log(z);
+    For best readability, programmers often like to avoid code lines longer than 80 characters.
+    If a JavaScript statement does not fit on one line, the best place to break it is after an operator:
+        document.getElementById("demo").innerHTML =
+        "Hello Dolly!";
+
+***** The Assignment Operator ***** https://www.w3schools.com/js/js_assignment.asp
+    In JavaScript, the equal sign (=) is an "assignment" operator, not an "equal to" operator.
+    x = x + 5
+    In JavaScript, however, it makes perfect sense: it assigns the value of x + 5 to x.
+
+***** JavaScript Comments ***** https://www.w3schools.com/js/js_comments.asp
+    Not all JavaScript statements are "executed".quotes
+    Code after double slashes // or between /* and */ is treated as a comment.
+    You can use comments to Prevent Execution
+
+***** JavaScript Code Blocks ***** 
+    JavaScript statements can be grouped together in code blocks, inside curly brackets {...}.
+    The purpose of code blocks is to define statements to be executed together.
+    One place you will find statements grouped together in blocks, is in JavaScript functions:
+    function myFunction() {
+        document.getElementById("demo1").innerHTML = "Hello Dolly!";
+        document.getElementById("demo2").innerHTML = "How are you?";
+    }
+    
+***** JavaScript Literals ***** 
+    Numbers are written with or without decimals
+    Strings are text and written within double or single quotes
+    10.50 & 1001
+    "John Doe" & 'John Doe'   
+
+***** JavaScript Variables ***** https://www.w3schools.com/js/js_variables.asp
+    variables are used to store data values.
+    An equal sign is used to assign values to variables.
+    The 2015 version of JavaScript (ES6 - ECMAScript 2015) 
+    allows the use of the const keyword to define a variable that cannot be reassigned, 
+    and the let keyword to define a variable with restricted scope.
+    
+    let x = 5;
+    let y = 6;
+    let z = x + y;
+
+***** JavaScript Identifiers ***** https://www.w3schools.com/js/js_variables.asp
+    Names can contain letters, digits, underscores, and dollar signs.
+    Names must begin with a letter
+    Names can also begin with $ and _ (but we will not use it in this tutorial)
+    Names are case sensitive (y and Y are different variables)
+    Reserved words (like JavaScript keywords) cannot be used as names
+
+***** JavaScript Data Types ***** https://www.w3schools.com/js/js_datatypes.asp
+    JavaScript variables can hold many data types: numbers, strings, objects and more:
+    To be able to operate on variables, it is important to know something about the type.
+    When adding a number and a string, JavaScript will treat the number as a string.
+        let x = 16 + 4 + 'Fahad';
+        document.getElementById('demo').innerHTML = x;
+
+    JavaScript has dynamic types. 
+    This means that the same variable can be used to hold different data types:
+        var x;           // Now x is undefined
+        x = 5;           // Now x is a Number
+        x = "John";      // Now x is a String
+    
+    JavaScript Strings
+    A string (or a text string) is a series of characters like "John Doe".
+    Strings are written with quotes. You can use single or double quotes:
+    You can use quotes inside a string, as long as they don't match the quotes surrounding the string:
+        var answer1 = "It's alright";             // Single quote inside double quotes
+        var answer2 = "He is called 'Johnny'";    // Single quotes inside double quotes
+        var answer3 = 'He is called "Johnny"';    // Double quotes inside single quotes
+
+    Escape Character
+    Because strings must be written within quotes, JavaScript will misunderstand this string:
+    var x = "We are the so-called "Vikings" from the north.";
+    var x = "We are the so-called \"Vikings\" from the north.";
+
+
+    JavaScript Numbers
+    JavaScript has only one type of numbers.
+    Numbers can be written with, or without decimals:
+        var x1 = 34.00;     // Written with decimals
+        var x2 = 34;        // Written without decimals
+
+    JavaScript Numbers are Always 64-bit Floating Point
+    Unlike many other programming languages, JavaScript does not define different types of numbers, 
+    like integers, short, long, floating-point etc
+    JavaScript numbers are always stored as double precision floating point numbers, 
+    following the international IEEE 754 standard.
+    This format stores numbers in 64 bits, where the number (the fraction) is stored 
+    in bits 0 to 51, the exponent in bits 52 to 62, and the sign in bit 63:
+
+    The maximum number of decimals is 17, 
+    but floating point arithmetic is not always 100% accurate:
+
+    var x = 0.2 + 0.1;         // x will be 0.30000000000000004
+    To solve the problem above, it helps to multiply and divide:
+    var x = (0.2 * 10 + 0.1 * 10) / 10;       // x will be 0.3
+
+    Numeric Strings
+        let x = 100;
+        let y = "100";
+        document.getElementById("demo").innerHTML = x + y; => returns 100100
+        document.getElementById("demo").innerHTML = x/y; => returns 1
+
+    NaN - Not a Number
+    NaN is a JavaScript reserved word indicating that a number is not a legal number.
+    Trying to do arithmetic with a non-numeric string will result in NaN (Not a Number):
+
+        let x = 100;
+        let y = "something";
+        document.getElementById("demo").innerHTML = x / y;
+        typeof NaN;            // returns "number"
+
+   
+
+    JavaScript Booleans
+    Booleans can only have two values: true or false.
+        let x = true;
+        document.getElementById('demo').innerHTML = x;
+
+    -- NEED TO COME BACK TO THIS AS WE NEED TO TAKE THIS TO INTERMEDIATE LEVEL
+
+***** JavaScript Arithmetic Operators ***** https://www.w3schools.com/js/js_operators.asp
+    JavaScript uses arithmetic operators ( + - * / ) to compute values
+    JavaScript uses an assignment operator ( = ) to assign values to variables:
+    I think this will be nice because we will be done with variables part of the tutorials
+    Multiplication (*) and division (/) have higher precedence than addition (+) and subtraction (-).
+    
+        var x,y,z;
+        x = 5; 
+        y = 6;
+        
+        z = (x + y * 10)/2;
+        
+        var x = 100 + 50 * 3; //(*) and (/) have higher precedence 
+
+        **	Exponentiation // this was new to me
+        Talk about Assignment Operators here again
+        +=  assigning it's own with the operator
+
+***** JavaScript comparison, Logical Operators ***** https://www.w3schools.com/js/js_comparisons.asp
+    Comparison operators are used in logical statements to determine equality or difference between variables or values.
+    Comparing Different Types
+    2 < "12"	true
+    2 < "John"	false
+    "2" > "12"	true
+    When comparing two strings, "2" will be greater than "12", because (alphabetically) 1 is less than 2.
+
+    Conditional Statements
+    Use if to specify a block of code to be executed, if a specified condition is true
+    Use else to specify a block of code to be executed, if the same condition is false
+    Use else if to specify a new condition to test, if the first condition is false
+    Use switch to specify many alternative blocks of code to be executed
+
+        if (condition) {
+            //  block of code to be executed if the condition is true
+        }
+        comparing strings
+        let x = "F";
+        if(x > "A")
+        {
+            //this does get printed because 
+            document.getElementById('demo').innerHTML = "I am getting printed";
+        }
+        
+***** JavaScript if else and else if ***** https://www.w3schools.com/js/js_if_else.asp
+        
+        //else if statements
+        if(x > 10)
+            document.getElementById('demo').innerHTML = "x is greater than 10";
+        else if(x > 8)
+            document.getElementById('demo').innerHTML = "x is greater than 8";
+        else
+        document.getElementById('demo').innerHTML = "x is less than 8 & 10";
+
+***** JavaScript Switch ***** https://www.w3schools.com/js/js_switch.asp
+        The switch expression is evaluated once.
+        The value of the expression is compared with the values of each case.
+        If there is a match, the associated block of code is executed.
+        If there is no match, the default code block is executed.
+
+        //switch statements
+        switch (x) {
+        case 10:
+        case 11:
+            document.getElementById('demo').innerHTML = "x is equal to 10 or 11";
+            break;
+            
+        case 15:
+            document.getElementById('demo').innerHTML = "x is equal to 15";
+            break;
+            
+        default:
+            document.getElementById('demo').innerHTML = "x is other than 10 or 15";
+            break;
+        }
+
+        //Strict Comparison
+        Switch cases use strict comparison (===).
+        The values must be of the same type to match.
+        A strict comparison can only be true if the operands are of the same type.
+        switch (x) {
+        case 0:
+            text = "Off";
+            break;
+        case 1:
+            text = "On";
+            break;
+        default:
+            text = "No value found";
+        }
+
+***** JavaScript For Loop ***** https://www.w3schools.com/js/js_loop_for.asp
+        Loops are handy, if you want to run the same code over and over again, 
+        each time with a different value.
+        Often this is the case when working with arrays:
+
+        for (let i = 0; i < x; i++) {
+            console.log('Curious Drive-' + i);
+        }
+
+        => There other things that you can do with for/of for/in
+        => But I will have to come back to this in Array related lessons
+
+***** JavaScript While Loop ***** https://www.w3schools.com/js/js_loop_while.asp
+    The while loop loops through a block of code as long as a specified condition is true.
+    while(i < x){
+        console.log('Curious Drive-' + i);
+        i++;
+    }
+
+    //Do While Loop
+    The do/while loop is a variant of the while loop. 
+    This loop will execute the code block once, before checking if the condition is true, 
+    then it will repeat the loop as long as the condition is true.
+     do{
+        console.log('Curious Drive-' + i);
+        i++;
+    }while(i < 0)
+
+    Do not forget to increase the variable used in the condition, 
+    otherwise the loop will never end!
+
+    //JavaScript Break and Continue
+    The break statement "jumps out" of a loop.
+    The continue statement "jumps over" one iteration in the loop.
+
+    for (let i = 0; i < x; i++) {
+
+        if(i == 3)
+            continue;
+            //break;
+
+        console.log('Value of i at this moment - ' + i);
+    }
+
+-------------------------------- BEGINNERS --------------------------------
+
+-------------------------------- INTERMEDIATE --------------------------------
+
+***** JavaScript Functions ***** https://www.w3schools.com/js/js_functions.asp
+    A JavaScript function is a block of code designed to perform a particular task.
+    A JavaScript function is executed when "something" invokes it (calls it).
+
+    function areaOfCicle(radius) {
+        const factor = 3.14;
+        let result = factor*(radius*radius);
+        return result;
+    }
+
+    Function Return 
+    Functions often compute a return value. The return value is "returned" back to the "caller":
+    When JavaScript reaches a return statement, the function will stop executing.
+
+    Function Invocation
+    The code inside the function will execute when "something" invokes (calls) the function:
+    * When an event occurs (when a user clicks a button)
+    * When it is invoked (called) from JavaScript code
+    * Automatically (self invoked)
+
+    Why Functions?
+    You can reuse code: Define the code once, and use it many times.
+    You can use the same code many times with different arguments, to produce different results.
+
+    Local Variables
+    Variables declared within a JavaScript function, become LOCAL to the function.
+    Local variables can only be accessed from within the function.
+
+        // code here can NOT use carName
+        function myFunction() {
+            var carName = "Volvo";
+            // code here CAN use carName
+        }
+        // code here can NOT use carName
+
+    Creating Fucntion as a property
+    You can create a function as variable and you can use that varible name to call the method
+    let addTwoNumbers = function(a,b)
+    {
+        return a+b;
+    }
+    
+    document.getElementById("demo").innerHTML = addTwoNumbers(12,12);  
+
+***** JavaScript Events ***** https://www.w3schools.com/js/js_events.asp
+    HTML events are "things" that happen to HTML elements.
+    When JavaScript is used in HTML pages, JavaScript can "react" on these events.
+    Here are some examples of HTML events:
+        => An HTML web page has finished loading   
+        => An HTML input field was changed 
+        => An HTML button was clicked
+
+    <button onclick="Submit()">Submit</button>
+    <br/><br/>
+    <input type ="text" onchange="Submit()">
+    <br/><br/>
+    <button onmouseover="Submit()">Mouse Hover</button>
+    <br/><br/>
+    <input type="text" onkeydown="Submit()"></input>
+    <br/><br/>
+    <p id="demo"></p>
+
+    function Submit(){
+        document.getElementById("demo").innerHTML = "the textbox value has been changed";
+    }
+    
+***** JavaScript Objects ***** https://www.w3schools.com/js/js_objects.asp
+    In real life, a car is an object.
+    A car has properties like weight and color, and methods like start and stop:
+    All cars have the same properties, but the property values differ from car to car.
+    All cars have the same methods, but the methods are performed at different times.
+
+    JavaScript Objects
+    let person = { 
+        firstName : "Fahad", 
+        lastName : "Mullaji", 
+        gender : "M", 
+        age : 32 
+    };
+    
+    document.getElementById("demo").innerHTML = person["firstName"];
+    document.getElementById("demo").innerHTML = person.firstName; 
+
+    Empty Objects
+    you can create an Empty object. But you do need to mention the data type
+    They can be separated by ":"
+
+    let person = { 
+        firstName:"",
+        lastName:"",
+        gender:"",
+        age:0
+    };
+
+    person.firstName = "Fahad";
+    
+    document.getElementById("demo").innerHTML = person["firstName"];
+    document.getElementById("demo").innerHTML = person.firstName;
+
+    Object Methods
+    Objects can also have methods.
+    Methods are actions that can be performed on objects.
+    Methods are stored in properties as function definitions.
+    
+    function Submit(){
+        person.firstName = "Fahad";
+        person.read();
+    }
+
+    let person = { 
+        firstName:"",
+        lastName:"",
+        gender:"",
+        age:0,
+        write : function() {
+            document.getElementById("demo").innerHTML = this.firstName + " is writing...";
+        },
+        read : function() {
+            document.getElementById("demo").innerHTML = this.firstName + " is reading...";
+        }
+    };   
+
+    The this Keyword
+    In a function definition, this refers to the "owner" of the function.   
+    In the example above, this is the person object that "owns" the write function.
+    In other words, this.firstName means the firstName property of this object.
+
+    <button onclick="Submit()">Submit</button>
+    <br/><br/>
+    <input type ="text" onchange="Submit()">
+    <br/><br/>
+    <button onmouseover="Submit()">Mouse Hover</button>
+    <br/><br/>
+    <input type="text" onkeydown="Submit()"></input>
+    <br/><br/>
+    <p id="demo"></p>
+
+    function Submit(){
+        document.getElementById("demo").innerHTML = "the textbox value has been changed";
+    }
+
+-- NEED TO GO BACK TO BEGINNERS LEVEL TO EXPLAIN PROPERTIES AND METHODS OF STRING & NUMBERS
+
+***** JavaScript String Methods and Properties ***** https://www.w3schools.com/js/js_string_methods.asp
+
+    Primitive values, like "John Doe", cannot have properties or methods 
+    But with JavaScript, methods and properties are also available to primitive values, 
+    because JavaScript treats primitive values as objects 
+    when executing methods and properties.
+    
+    String Length
+    The length property returns the length of a string:
+        let firstName = "Fahad";
+        document.getElementById("demo").innerHTML =  firstName.length;
+    
+    Finding a String in a String
+    The indexOf() method returns the index of (the position of) the first occurrence
+    of a specified text in a string:
+
+        let fullName = "Curious Drive";
+        let pos = fullName.indexOf("Drive");
+        document.getElementById("demo").innerHTML = pos; => returns 8
+
+        let fullName = "Curious Drive";
+        let pos = fullName.lastIndexOf("Drive");
+        document.getElementById("demo").innerHTML = pos; => returns 8
+
+        let fullName = "Curious Drive";
+        let pos = fullName.indexOf("Fahad");
+        document.getElementById("demo").innerHTML = pos; => returns -1
+
+    Both methods accept a second parameter as the starting position for the search:
+
+        let fullName = "Curious Drive";
+        let pos = fullName.indexOf("Curious", 8);
+        document.getElementById("demo").innerHTML = pos; => returns -1
+    
+    The lastIndexOf() methods searches backwards (from the end to the beginning), meaning: 
+    if the second parameter is 15, the search starts at position 15, 
+    and searches to the beginning of the string.
+        
+        let fullName = "Curious Drive";
+        let pos = fullName.lastIndexOf("Curious", 8);
+        document.getElementById("demo").innerHTML = pos; => returns -1
+
+    Searching for a String in a String
+        var str = "Please locate where 'locate' occurs!";
+        var pos = str.search("locate");
+
+    The two methods are NOT equal. These are the differences:
+        The search() method cannot take a second start position argument.
+        The indexOf() method cannot take powerful search values (regular expressions).
+
+***** JavaScript Number Methods & Properties ***** https://www.w3schools.com/js/js_number_methods.asp
+    
+    Global JavaScript Methods
+    JavaScript global methods can be used on all JavaScript data types.
+    These are the most relevant methods, when working with numbers:
+
+    Number() => Returns a number, converted from its argument.
+    parseFloat() => Parses its argument and returns a floating point number
+    parseInt() => Parses its argument and returns an integer
+
+    The Number() Method
+    Number() can be used to convert JavaScript variables to numbers
+    Number(true);          // returns 1
+    Number(false);         // returns 0
+    Number("10");          // returns 10
+    Number("  10");        // returns 10
+    Number("10  ");        // returns 10
+    Number(" 10  ");       // returns 10
+    Number("10.33");       // returns 10.33
+    Number("10,33");       // returns NaN
+    Number("10 33");       // returns NaN
+    Number("John");        // returns NaN
+
+    The parseInt() Method
+    parseInt() parses a string and returns a whole number. Spaces are allowed. 
+    Only the first number is returned:
+    parseInt("10");         // returns 10
+    parseInt("10.33");      // returns 10
+    parseInt("10 20 30");   // returns 10
+    parseInt("10 years");   // returns 10
+    parseInt("years 10");   // returns NaN 
+
+    The parseFloat() Method
+
+    parseFloat("10");        // returns 10
+    parseFloat("10.33");     // returns 10.33
+    parseFloat("10 20 30");  // returns 10
+    parseFloat("10 years");  // returns 10
+    parseFloat("years 10");  // returns NaN
+
+
+***** JavaScript Arrays ***** https://www.w3schools.com/js/js_arrays.asp
+    For JavaScript arrays please check array.js files in the notes
+
+***** JavaScript Dates ***** https://www.w3schools.com/js/js_dates.asp
+    For JavaScript dates please check dates.js file in the notes
+
+***** JavaScript Math ***** https://www.w3schools.com/js/js_math.asp
+    For JavaScript dates please check math.js file in the notes
+
+***** JavaScript Arrow Functions ***** https://www.w3schools.com/js/js_arrow_function.asp
+    For JavaScript arrow functions please check arrowFunctions.js file in the notes
+
+***** JavaScript Classes ***** https://www.w3schools.com/js/js_classes.asp
+    For JavaScript classes please check class.js file in the notes
+
+***** JavaScript Let ***** https://www.w3schools.com/js/js_let.asp
+    there are few important points in this article that should get covered
+
+Also need to check some more resources for JS classes and JS Aysnc
+https://www.w3schools.com/js/js_class_intro.asp
+https://www.w3schools.com/js/js_callback.asp
+
+-------------------------------- INTERMEDIATE --------------------------------
